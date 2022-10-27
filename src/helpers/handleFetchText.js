@@ -4,14 +4,12 @@ const cheerio = require("cheerio");
 const fetchText = async (req, res, next) => {
   const url = "https://text.123docz.net//document/" + req.params.url + ".htm";
   try {
+    const $ = await fetchHtmlFromUrl(url);
+    res.send($(".vf_view_pc").html());
   } catch (err) {
-    if (!err.message) {
-      err.message = "Link get text invalid!!!";
-    }
+    err.message = "Link get text invalid!!!";
     next(err);
   }
-  const $ = await fetchHtmlFromUrl(url);
-  res.send($(".vf_view_pc").html());
 };
 
 const fetchHtmlFromUrl = async (url) => {
