@@ -17,7 +17,7 @@ app.use("*", (req, res, next) => {
   <h5>Link text 123doc</h5>
   <p>https://text.123docz.net//document/BLABLABLA.htm</p>
   <h5> ==> Link get text</h5>
-  <p>https://123doc-get-text.herokuapp.com/BLABLABLA</p>`);
+  <p>https://get-text-123doc.herokuapp.com/BLABLABLA</p>`);
 });
 
 app.use((error, req, res, next) => {
